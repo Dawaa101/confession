@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Нэг жижигхэн захиа 💌</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Montserrat',sans-serif;
+  color:#5b3b46;
+  background:#fff8f7;
+  overflow-x:hidden;
+}
+.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
+.petal{
+  position:absolute;top:-40px;width:14px;height:20px;
+  background:#f4a8bb;border-radius:70% 30% 70% 30%;
+  opacity:.7;animation:fall linear infinite;
+}
+@keyframes fall{
+  0%{transform:translateY(-50px) rotate(0deg)}
+  100%{transform:translateY(110vh) translateX(80px) rotate(420deg)}
+}
+section{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:70px 20px;position:relative;overflow:hidden;
+}
+.hero{
+  text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%,#ffe1ea 0,transparent 28%),
+    radial-gradient(circle at 80% 70%,#f8d9e5 0,transparent 30%),
+    linear-gradient(135deg,#fffafa,#fff1f5);
+}
+.flower{
+  position:absolute;font-size:55px;opacity:.55;filter:drop-shadow(0 5px 8px #e9b4c0);
+  animation:float 5s ease-in-out infinite;
+}
+.f1{left:7%;top:15%}.f2{right:8%;top:22%;animation-delay:1s}.f3{left:12%;bottom:14%;animation-delay:2s}.f4{right:12%;bottom:10%;animation-delay:3s}
+@keyframes float{50%{transform:translateY(-18px) rotate(8deg)}}
+.hero-card{max-width:800px;position:relative;z-index:2}
+.small{letter-spacing:5px;text-transform:uppercase;font-size:12px;color:#b47a8b;margin-bottom:22px}
+h1{font-family:'Great Vibes',cursive;font-size:clamp(65px,10vw,120px);font-weight:400;color:#a84f6b;line-height:.95}
+.hero p{max-width:600px;margin:28px auto;color:#785864;line-height:1.9;font-size:16px}
+.btn{
+  border:0;border-radius:999px;padding:16px 34px;font-weight:700;
+  background:#b85b78;color:white;cursor:pointer;box-shadow:0 10px 25px #d99aaa66;
+  transition:.25s;font-size:15px;
+}
+.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 15px 30px #d99aaa88}
+.scroll{margin-top:55px;font-size:12px;color:#b98b98;animation:bounce 1.8s infinite}
+@keyframes bounce{50%{transform:translateY(8px)}}
+
+.letter-section{background:#fffaf8}
+.letter{
+  width:min(720px,100%);padding:60px 55px;background:#fff;
+  border:1px solid #f1dfe4;border-radius:12px;
+  box-shadow:0 25px 70px #a65d7120;position:relative;
+}
+.letter:before,.letter:after{content:'🌸';position:absolute;font-size:38px}
+.letter:before{left:-18px;top:-18px}.letter:after{right:-18px;bottom:-18px}
+.letter h2{text-align:center;font-family:'Great Vibes';font-size:65px;font-weight:400;color:#aa6075;margin-bottom:25px}
+.letter p{line-height:2;font-size:16px;margin:15px 0}
+.center{text-align:center}
+.highlight{font-size:24px!important;font-weight:700;color:#a74f68;margin:30px 0!important}
+
+.reasons{background:linear-gradient(180deg,#fff6f8,#fff)}
+.content{width:min(1000px,100%);text-align:center}
+.title{font-family:'Great Vibes';font-size:70px;color:#a84f6b;font-weight:400;margin-bottom:45px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.reason{
+  background:white;border:1px solid #f2dce3;border-radius:24px;padding:30px 18px;
+  box-shadow:0 12px 30px #b76b7c12;transition:.3s;
+}
+.reason:hover{transform:translateY(-8px)}
+.reason .icon{font-size:38px;margin-bottom:15px}.reason h3{font-size:15px;margin-bottom:9px}.reason p{font-size:12px;line-height:1.7;color:#92727c}
+
+.ask{background:radial-gradient(circle at center,#ffe4ec,#fff8f7 58%);text-align:center}
+.ask-card{position:relative;z-index:2}
+.ask .mini{font-size:15px;letter-spacing:3px;color:#b47688;margin-bottom:20px}
+.ask h2{font-family:'Great Vibes';font-size:clamp(70px,11vw,130px);font-weight:400;color:#a94d68;line-height:1}
+.ask h3{font-size:clamp(25px,4vw,42px);margin:15px 0 35px;color:#613f49}
+.buttons{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.yes{background:#b84f70;padding:17px 45px;font-size:16px}
+.yes:hover{background:#9f3f5f}
+.later{background:#fff;color:#9d6475;border:1px solid #e8c8d2;box-shadow:none}
+.message{
+  display:none;margin:35px auto 0;padding:25px 30px;max-width:600px;
+  background:#ffffffc9;border:1px solid #efd4dc;border-radius:20px;
+  font-weight:600;line-height:1.8;animation:pop .5s ease;
+}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+
+footer{text-align:center;padding:30px;color:#b18a94;background:#fff5f7;font-size:12px}
+.heart{position:fixed;pointer-events:none;font-size:25px;z-index:50;animation:heart 1.4s ease-out forwards}
+@keyframes heart{0%{transform:translate(0,0) scale(.5);opacity:1}100%{transform:translate(var(--x),-130px) scale(1.5);opacity:0}}
+
+@media(max-width:700px){
+  .letter{padding:42px 25px}.grid{grid-template-columns:repeat(2,1fr)}
+  .title{font-size:58px}.reason{padding:24px 12px}
+}
+</style>
+</head>
+<body>
+
+<div class="petals" id="petals"></div>
+
+<section class="hero">
+  <span class="flower f1">🌸</span><span class="flower f2">🌷</span>
+  <span class="flower f3">🌹</span><span class="flower f4">🌸</span>
+  <div class="hero-card">
+    <div class="small">A little something for you</div>
+    <h1>Чамд...</h1>
+    <p>Энэ бол зүгээр нэг website биш.<br>Чамд хэлэхийг хүссэн хэдэн үгээ өөрийнхөөрөө хүргэх гэсэн жижигхэн оролдлого. 💌</p>
+    <button class="btn" onclick="document.getElementById('letter').scrollIntoView()">Захиаг нээх 💌</button>
+    <div class="scroll">↓ доош гүйлгээрэй ↓</div>
+  </div>
+</section>
+
+<section class="letter-section" id="letter">
+  <div class="letter">
+    <h2>Нэг жижигхэн захиа</h2>
+    <p>Сайн уу...</p>
+    <p>Би чамд нэг зүйлээ хэлэх гэж нэлээн удаан бодлоо.</p>
+    <p>Чамтай ярилцах бүрд миний өдөр арай өөр болдог. Чиний инээмсэглэл, хэлдэг үгс, бүр жижигхэн үйлдлүүд хүртэл надад онцгой санагддаг болсон.</p>
+    <p>Тэгээд нэг л мэдэхэд би чамайг зүгээр нэг хүн гэж харахаа больчихсон байсан.</p>
+    <p class="center highlight">Чи надад үнэхээр онцгой хүн болсон. ❤️</p>
+    <p>Тийм болохоор энэ удаа нууж үлдээлгүй шууд хэлмээр санагдлаа...</p>
+  </div>
+</section>
+
+<section class="reasons">
+  <div class="content">
+    <div class="small">Why you?</div>
+    <div class="title">Чамд дурласан шалтгаанууд</div>
+    <div class="grid">
+      <div class="reason"><div class="icon">🌷</div><h3>Чиний инээмсэглэл</h3><p>Харах бүрд өөрийн эрхгүй инээмсэглэмээр болдог.</p></div>
+      <div class="reason"><div class="icon">💗</div><h3>Чиний зан</h3><p>Чиний өөрийнхөөрөө байдаг тэр байдал чинь надад таалагддаг.</p></div>
+      <div class="reason"><div class="icon">✨</div><h3>Чамтай байх</h3><p>Хамт байх үед цаг хугацаа арай хурдан өнгөрдөг юм шиг санагддаг.</p></div>
+      <div class="reason"><div class="icon">🌹</div><h3>Зүгээр л чи</h3><p>Яг нэг шалтгаан хэлэхэд хэцүү. Зүгээр л чи болохоор.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ask">
+  <div class="ask-card">
+    <div class="mini">AND SO...</div>
+    <h2>Би чамд сайн.</h2>
+    <h3>Надтай үерхээч? ❤️</h3>
+    <div class="buttons">
+      <button class="btn yes" onclick="sayYes()">Тийм ээ 💗</button>
+      <button class="btn later" onclick="sayMaybe()">Бодож үзье 🌷</button>
+    </div>
+    <div class="message" id="message"></div>
+  </div>
+</section>
+
+<footer>Made with a little courage & a lot of feelings. ♡</footer>
+
+<script>
+const petals = document.getElementById('petals');
+for(let i=0;i<24;i++){
+  const p=document.createElement('div');
+  p.className='petal';
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDuration=(5+Math.random()*7)+'s';
+  p.style.animationDelay=(-Math.random()*10)+'s';
+  p.style.transform=`scale(${.5+Math.random()*.8})`;
+  petals.appendChild(p);
+}
+
+function hearts(){
+  for(let i=0;i<28;i++){
+    const h=document.createElement('div');
+    h.className='heart';
+    h.textContent=['❤️','💗','💖','🌸'][Math.floor(Math.random()*4)];
+    h.style.left=(45+Math.random()*10)+'vw';
+    h.style.top=(55+Math.random()*10)+'vh';
+    h.style.setProperty('--x',(Math.random()*240-120)+'px');
+    h.style.animationDelay=(Math.random()*.5)+'s';
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),1900);
+  }
+}
+function sayYes(){
+  hearts();
+  const m=document.getElementById('message');
+  m.style.display='block';
+  m.innerHTML='Тэгвэл... энэ мөчийг би хэзээ ч мартахгүй. 🥹💗<br><br>Бидний түүх яг одооноос эхэлж байна. 🌷';
+}
+function sayMaybe(){
+  const m=document.getElementById('message');
+  m.style.display='block';
+  m.innerHTML='Яарах хэрэггүй ээ. 🌷<br>Хариугаа бодож байгаад, сэтгэлээсээ хэлээрэй. Би хүлээж чадна. 💌';
+}
+</script>
+</body>
+</html>
